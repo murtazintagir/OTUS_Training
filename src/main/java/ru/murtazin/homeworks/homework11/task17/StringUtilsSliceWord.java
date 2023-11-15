@@ -9,8 +9,7 @@ package ru.murtazin.homeworks.homework11.task17;
 
 public class StringUtilsSliceWord {
     public static String getSlice(String input, int leftEdge, int rightEdge) {
-// TODO
-        return "";
+        return input.substring(leftEdge, rightEdge);
     }
 
     private StringUtilsSliceWord() {
@@ -19,7 +18,7 @@ public class StringUtilsSliceWord {
 
     public static void main(String[] args) {
         System.out.println("При вводе строки \"Test\" с индексами 1 и 4 метод должен вернуть \"est\" - "
-                + "\"" + StringUtilsSliceWord.getSlice("Test", 1,4) +"\"");
+                + "\"" + StringUtilsSliceWord.getSlice("Test", -1,0) +"\"");
 
     }
 }
