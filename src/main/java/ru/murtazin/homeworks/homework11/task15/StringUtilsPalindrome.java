@@ -12,8 +12,14 @@ package ru.murtazin.homeworks.homework11.task15;
 
 public class StringUtilsPalindrome {
     public static boolean isPalindrome(String input) {
-// TODO
-        return false;
+        String[] array = input.split(" ");
+        StringBuilder sb = new StringBuilder();
+        for (int i = array.length - 1; i > 0; i--) {
+            sb.append(array[i]);
+            sb.append(" ");
+        }
+        sb.append(array[0]);
+        return sb.toString().equals(input);
     }
 
     private StringUtilsPalindrome() {

@@ -11,8 +11,17 @@ package ru.murtazin.homeworks.homework11.task11;
 
 public class MathUtilFactorial {
     public static long getFactorial(byte number) {
-        // TODO
-        return 0;
+        long factor = 1;
+        if (number < 0) {
+            return 0;
+        } else if (number == 0) {
+            return 1;
+        } else {
+            for (int i = 1; i <= number; i++) {
+                factor *= i;
+            }
+            return factor;
+        }
     }
 
     private MathUtilFactorial() {
