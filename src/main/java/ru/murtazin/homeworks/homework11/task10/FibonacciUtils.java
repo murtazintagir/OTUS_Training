@@ -14,7 +14,7 @@ import java.util.Arrays;
 public class FibonacciUtils {
     public static String getFibonacciSum(byte limit) {
         int sum = 0;
-        if (limit <= 0 || limit == 1) {
+        if (limit <= 1) {
             return "0";
         } else {
             int[] f = new int[limit];
@@ -25,6 +25,9 @@ public class FibonacciUtils {
             }
             for (int i = 0; i < f.length; i++) {
                 sum += f[i];
+            }
+            if (sum < 0) {
+                return "0";
             }
         }
 
@@ -43,5 +46,8 @@ public class FibonacciUtils {
         System.out.println("Сумма чисел фибоначчи до 2 - " + FibonacciUtils.getFibonacciSum((byte) 2));
         System.out.println("Сумма чисел фибоначчи до 3 - " + FibonacciUtils.getFibonacciSum((byte) 3));
         System.out.println("Сумма чисел фибоначчи до 4 - " + FibonacciUtils.getFibonacciSum((byte) 4));
+        System.out.println("Сумма чисел фибоначчи до 6 - " + FibonacciUtils.getFibonacciSum((byte) 6));
+        System.out.println("Сумма чисел фибоначчи до 7 - " + FibonacciUtils.getFibonacciSum((byte) 7));
+        System.out.println("Сумма чисел фибоначчи до 128 - " + FibonacciUtils.getFibonacciSum((byte) 90));
     }
 }

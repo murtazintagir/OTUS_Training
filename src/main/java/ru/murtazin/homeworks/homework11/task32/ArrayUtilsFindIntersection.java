@@ -10,14 +10,20 @@ import java.util.Arrays;
  */
 public class ArrayUtilsFindIntersection {
     public static int[] findIntersection(int[] rightArray, int[] leftArray) {
+        int[] interArr = new int[rightArray.length];
+        int num = 0;
         for (int i = 0; i < rightArray.length; i++) {
             for (int j = 0; j < leftArray.length; j++) {
                 if (rightArray[i] == leftArray[j]) {
-                    System.out.println(rightArray[i]);
+                    interArr[num] = rightArray[i];
+                    num++;
                 }
             }
         }
-        return new int[0];
+        int[] result = new int[num];
+        System.arraycopy(interArr, 0, result, 0, num);
+        System.out.println(Arrays.toString(interArr));
+        return result;
     }
 
     private ArrayUtilsFindIntersection() {
@@ -28,6 +34,11 @@ public class ArrayUtilsFindIntersection {
         System.out.println(
                 "При вводе массивов [1,4,7,3,8] и [9,12,7,4] метод должен вернуть массив [4,7] - '"
                         + Arrays.toString(ArrayUtilsFindIntersection.findIntersection(new int[]{1, 4, 7, 3, 8}, new int[]{9, 12, 7, 4}))
+                        + "'"
+        );
+        System.out.println(
+                "При вводе массивов [1,4,7,3,8] и [9,12,7,4] метод должен вернуть массив [4,7] - '"
+                        + Arrays.toString(ArrayUtilsFindIntersection.findIntersection(new int[]{1, 5, 1, 3, 8}, new int[]{9, 12, 7, 4}))
                         + "'"
         );
     }
