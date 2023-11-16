@@ -6,8 +6,12 @@ package ru.murtazin.homeworks.homework11.task41;
  */
 public class TypesTaskWordCount {
     public static int wordCount(String input) {
-//TODO
-        return -1;
+        if (input.equals("")) {
+            return 0;
+        } else {
+            String[] words = input.split(" ");
+            return words.length;
+        }
     }
 
     private TypesTaskWordCount() {
@@ -18,6 +22,10 @@ public class TypesTaskWordCount {
         System.out.println(
                 "В этой строке пять слов: " +
                         wordCount("В этой строке пять слов: ")
+        );
+        System.out.println(
+                "В этой строке пять слов: " +
+                        wordCount("")
         );
     }
 }

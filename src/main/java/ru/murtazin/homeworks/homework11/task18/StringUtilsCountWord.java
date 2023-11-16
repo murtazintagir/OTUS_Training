@@ -1,5 +1,7 @@
 package ru.murtazin.homeworks.homework11.task18;
 
+import java.util.Arrays;
+
 /**
  * ДЗ (18)
  * Реализуйте метод, который считает количество упоминаний указанного слова в строке
@@ -8,8 +10,16 @@ package ru.murtazin.homeworks.homework11.task18;
 
 public class StringUtilsCountWord {
     public static int countWord(String input, String word) {
-// TODO
-        return 0;
+        input = input.replaceAll("[^а-яА-Яa-zA-Z]+", " ")
+                .strip();
+        String[] arr = input.split(" ");
+        int num = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i].toLowerCase().equals(word)) {
+                num++;
+            }
+        }
+        return num;
     }
 
     private StringUtilsCountWord() {

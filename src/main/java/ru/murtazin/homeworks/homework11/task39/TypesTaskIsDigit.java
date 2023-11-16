@@ -6,8 +6,7 @@ package ru.murtazin.homeworks.homework11.task39;
  */
 public class TypesTaskIsDigit {
     public static boolean isDigit(char input) {
-//TODO
-        return false;
+        return Character.isDigit(input);
     }
 
     private TypesTaskIsDigit() {

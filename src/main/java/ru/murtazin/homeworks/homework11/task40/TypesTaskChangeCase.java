@@ -7,8 +7,11 @@ package ru.murtazin.homeworks.homework11.task40;
  */
 public class TypesTaskChangeCase {
     public static char changeCase(char input) {
-//TODO
-        return '0';
+        if (Character.isLowerCase(input)) {
+            return Character.toUpperCase(input);
+        } else {
+            return Character.toLowerCase(input);
+        }
     }
 
     private TypesTaskChangeCase() {

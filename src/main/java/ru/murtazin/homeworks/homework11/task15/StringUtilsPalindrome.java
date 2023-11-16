@@ -12,7 +12,20 @@ package ru.murtazin.homeworks.homework11.task15;
 
 public class StringUtilsPalindrome {
     public static boolean isPalindrome(String input) {
-        return false;
+        String clean = input.replaceAll("[^а-яА-Яa-zA-Z]+", "").toLowerCase();
+        if (clean.length() == 0) {
+            return false;
+        }
+        int length = clean.length();
+        int forward = 0;
+        int backward = length - 1;
+        while (backward > forward) {
+            char forwardChar = clean.charAt(forward++);
+            char backwardChar = clean.charAt(backward--);
+            if (forwardChar != backwardChar)
+                return false;
+        }
+        return true;
     }
 
     private StringUtilsPalindrome() {
@@ -20,12 +33,17 @@ public class StringUtilsPalindrome {
     }
 
     public static void main(String[] args) {
-        System.out.println("При вводе строки \"шалаш\" метод должен вернуть true - " + StringUtilsPalindrome.isPalindrome("шалаш"));
-        System.out.println("При вводе строки \"шалаш\" метод должен вернуть true - " + StringUtilsPalindrome.isPalindrome("!$%"));
-        System.out.println("При вводе строки \"шалаш\" метод должен вернуть true - " + StringUtilsPalindrome.isPalindrome("шал25231аш"));
-        String text = "шал25231аш";
-        System.out.println(text);
-        text = text.replaceAll("[^a-zA-Z]", "");
-        System.out.println(text);
+        System.out.println("При вводе строки \"шалаш\" метод должен вернуть true - " +
+                StringUtilsPalindrome.isPalindrome("шалаш"));
+        System.out.println("При вводе строки \"!$%\" метод должен вернуть false - " +
+                StringUtilsPalindrome.isPalindrome("!$%"));
+        System.out.println("При вводе строки \"шал25231аш\" метод должен вернуть true - " +
+                StringUtilsPalindrome.isPalindrome("шал25231аш"));
+        System.out.println("При вводе строки \"шал25231аш\" метод должен вернуть true - " +
+                StringUtilsPalindrome.isPalindrome("!#!@#,@шал25231аш!$!$"));
+        System.out.println("При вводе строки \"Лёша на полке клопа нашёл\" метод должен вернуть true - " +
+                StringUtilsPalindrome.isPalindrome("Лёша на полке клопа нашёл"));
+        System.out.println("При вводе строки \"Лёша на полке клопа нашёл\" метод должен вернуть true - " +
+                StringUtilsPalindrome.isPalindrome("Лёша$!@#!# на полке клопа нашёл"));
     }
 }

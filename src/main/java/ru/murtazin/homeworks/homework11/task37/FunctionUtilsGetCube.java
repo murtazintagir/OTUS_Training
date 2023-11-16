@@ -6,8 +6,7 @@ package ru.murtazin.homeworks.homework11.task37;
  */
 public class FunctionUtilsGetCube {
     public static String getCube(int input) {
-// TODO
-        return "";
+        return "" + (long) input * input * input;
     }
 
     private FunctionUtilsGetCube() {

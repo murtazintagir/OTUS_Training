@@ -8,8 +8,20 @@ package ru.murtazin.homeworks.homework11.task19;
 
 public class ConditionalUtilsCountInner {
     public static int countInnerNumber(int base, int checkNumber) {
-// TODO
-        return 0;
+        int base1, base2, base3, num = 0;
+        base1 = base / 100;
+        base2 = (base % 1000) / 10;
+        base3 = base % 100;
+        if (base1 == checkNumber) {
+            num++;
+        }
+        if (base2 == checkNumber) {
+            num++;
+        }
+        if (base3 == checkNumber) {
+            num++;
+        }
+        return num;
     }
 
     private ConditionalUtilsCountInner() {
@@ -18,6 +30,8 @@ public class ConditionalUtilsCountInner {
 
     public static void main(String[] args) {
         System.out.println("При вводе чисел 6522 и 22 метод должен вернуть 1 - "
+                + ConditionalUtilsCountInner.countInnerNumber(6522, 22));
+        System.out.println("При вводе чисел 2222 и 22 метод должен вернуть 1 - "
                 + ConditionalUtilsCountInner.countInnerNumber(2222, 22));
     }
 }

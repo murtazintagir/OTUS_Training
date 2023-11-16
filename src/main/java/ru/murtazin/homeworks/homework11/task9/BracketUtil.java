@@ -9,8 +9,22 @@ package ru.murtazin.homeworks.homework11.task9;
 
 public class BracketUtil {
     public static boolean isCorrectBrackets(String input, char bracketOpenSymbol, char bracketCloseSymbol) {
-
-        return true;
+        if (null == input || ((input.length() % 2) != 0)) {
+            return false;
+        } else {
+            char[] ch = input.toCharArray();
+            for (char c : ch) {
+                if (!(c == bracketOpenSymbol || c == bracketCloseSymbol)) {
+                    return false;
+                }
+            }
+        }
+        while (input.contains("()") || input.contains("[]") || input.contains("{}")) {
+            input = input.replaceAll("\\(\\)", "")
+                    .replaceAll("\\[\\]", "")
+                    .replaceAll("\\{\\}", "");
+        }
+        return (input.length() == 0);
     }
 
     private BracketUtil() {

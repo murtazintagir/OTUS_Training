@@ -9,8 +9,19 @@ import java.util.Arrays;
  */
 public class ArrayUtilsShiftElements {
     public static int[] shiftElements(int[] inputArray) {
-// TODO
-        return inputArray;
+        int[] shiftArray = new int[inputArray.length];
+        if (shiftArray.length == 1) {
+            return inputArray;
+        }
+        for (int i = 0; i < shiftArray.length - 1; i++) {
+            if (i == 0) {
+                shiftArray[shiftArray.length - 1] = inputArray[i];
+                shiftArray[i] = inputArray[i + 1];
+            } else {
+                shiftArray[i] = inputArray[i + 1];
+            }
+        }
+        return shiftArray;
     }
     private ArrayUtilsShiftElements() {
 
@@ -20,7 +31,10 @@ public class ArrayUtilsShiftElements {
         System.out.println(
                 "При вводе массива [1, 2, 3, 4, 5], метод должен вернуть массив [2, 3, 4, 5, 1] - '"
                         + Arrays.toString(ArrayUtilsShiftElements.shiftElements(new int[]{1, 2, 3, 4, 5}))
-                        + "'"
-        );
+                        + "'");
+        System.out.println(
+                "При вводе массива [1], метод должен вернуть массив [1] - '"
+                        + Arrays.toString(ArrayUtilsShiftElements.shiftElements(new int[]{1}))
+                        + "'");
     }
 }
