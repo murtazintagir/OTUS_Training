@@ -10,7 +10,13 @@ import java.util.Arrays;
  */
 public class ArrayUtilsFindIntersection {
     public static int[] findIntersection(int[] rightArray, int[] leftArray) {
-//TODO
+        for (int i = 0; i < rightArray.length; i++) {
+            for (int j = 0; j < leftArray.length; j++) {
+                if (rightArray[i] == leftArray[j]) {
+                    System.out.println(rightArray[i]);
+                }
+            }
+        }
         return new int[0];
     }
 

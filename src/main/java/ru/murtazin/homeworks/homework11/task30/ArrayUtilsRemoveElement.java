@@ -9,21 +9,13 @@ import java.util.Arrays;
  */
 public class ArrayUtilsRemoveElement {
     public static int[] removeElement(int[] nums, int val) {
-        int num = 0;
-        for (int i = 0; i < nums.length; i++) {
+        int index = 0;
+        for (int i = 0; i < nums.length; i++)
             if (nums[i] != val) {
-                num++;
+                nums[index++] = nums[i];
             }
-        }
-        int[] arr = new int[num];
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < nums.length; j++) {
-                if (nums[j] != val) {
-                    arr[i] = nums[j];
-                }
-            }
-        }
-        return arr;
+        // Create a copy of arr[]
+        return Arrays.copyOf(nums, index);
     }
 
     private ArrayUtilsRemoveElement() {
