@@ -6,9 +6,9 @@ package ru.murtazin.homeworks.homework14.task34;
  */
 public class FunctionUtilsHexToBin {
     public static String hexToBin(String hexBase) {
-        //TODO
-        return "010";
+        return hexBase;
     }
+
     private FunctionUtilsHexToBin() {
 
     }

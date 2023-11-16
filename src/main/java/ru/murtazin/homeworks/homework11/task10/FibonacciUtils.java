@@ -1,6 +1,6 @@
 package ru.murtazin.homeworks.homework11.task10;
 
-import java.util.Arrays;
+import java.math.BigInteger;
 
 /**
  * ДЗ (10)
@@ -13,7 +13,7 @@ import java.util.Arrays;
 
 public class FibonacciUtils {
     public static String getFibonacciSum(byte limit) {
-        int sum = 0;
+        byte sum = 0;
         if (limit <= 1) {
             return "0";
         } else {
@@ -25,9 +25,6 @@ public class FibonacciUtils {
             }
             for (int i = 0; i < f.length; i++) {
                 sum += f[i];
-            }
-            if (sum < 0) {
-                return "0";
             }
         }
 
@@ -48,6 +45,6 @@ public class FibonacciUtils {
         System.out.println("Сумма чисел фибоначчи до 4 - " + FibonacciUtils.getFibonacciSum((byte) 4));
         System.out.println("Сумма чисел фибоначчи до 6 - " + FibonacciUtils.getFibonacciSum((byte) 6));
         System.out.println("Сумма чисел фибоначчи до 7 - " + FibonacciUtils.getFibonacciSum((byte) 7));
-        System.out.println("Сумма чисел фибоначчи до 128 - " + FibonacciUtils.getFibonacciSum((byte) 90));
+        System.out.println("Сумма чисел фибоначчи до 128 - " + FibonacciUtils.getFibonacciSum((byte) 127));
     }
 }
